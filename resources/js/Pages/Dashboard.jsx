@@ -2,8 +2,17 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
 import Table from "./components/Table";
 import { Link } from "@inertiajs/react";
+import { useState } from "react";
 
 export default function Dashboard({ auth, clients }) {
+    const [filteredClients, setFilteredClients] = useState(clients);
+
+    const handleFilter = (event) => {
+        const value = event.target.value;
+        const filtered = clients.filter((user) => user.ci.includes(value));
+        setFilteredClients(filtered);
+    };
+
     return (
         <AuthenticatedLayout
             user={auth.user}
@@ -25,9 +34,17 @@ export default function Dashboard({ auth, clients }) {
                             Crear Cliente
                         </Link>
                     </div>
+                    <div className="mb-4">
+                        <input
+                            placeholder="buscar por cédula de identidad"
+                            onChange={handleFilter}
+                            type="text"
+                            className="w-1/2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        />
+                    </div>
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="relative overflow-x-auto">
-                            <Table clients={clients} />
+                            <Table clients={filteredClients} />
                         </div>
                     </div>
                 </div>
