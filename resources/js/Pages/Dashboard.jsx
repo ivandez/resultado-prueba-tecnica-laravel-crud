@@ -34,17 +34,9 @@ export default function Dashboard({ auth, clients }) {
                             Crear Cliente
                         </Link>
                     </div>
-                    <div className="mb-4">
-                        <input
-                            placeholder="buscar por cédula de identidad"
-                            onChange={handleFilter}
-                            type="text"
-                            className="w-1/2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                        />
-                    </div>
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="relative overflow-x-auto">
-                            <Table clients={filteredClients} />
+                            <Table clients={clients} />
                         </div>
                     </div>
                 </div>
