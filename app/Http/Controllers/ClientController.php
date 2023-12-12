@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class ClientController extends Controller
 {
@@ -12,7 +13,9 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view('clients/index');
+        return Inertia::render('clients/CreateForm', [
+            'user' => auth()->user()
+          ]);
     }
 
     /**
@@ -28,7 +31,21 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $client = new Client();
+
+        $client->ci = $request->ci;
+
+        $client->first_name = $request->firstName;
+
+        $client->last_name = $request->lastName;
+
+        $client->cellphone_number = $request->cellphoneNumber;
+
+        $client->address = $request->address;
+ 
+        $client->save();
+
+        return to_route('dashboard');
     }
 
     /**
