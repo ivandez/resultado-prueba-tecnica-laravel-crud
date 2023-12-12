@@ -98,7 +98,7 @@ export default function ClientForm() {
             </button>
             <Link
                 href="/dashboard"
-                className="text-white bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                className="ml-2 text-white bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
             >
                 Cancelar
             </Link>

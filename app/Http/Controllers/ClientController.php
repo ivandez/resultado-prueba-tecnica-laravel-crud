@@ -53,7 +53,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return $client;
     }
 
     /**
@@ -77,6 +77,8 @@ class ClientController extends Controller
      */
     public function destroy(Client $client)
     {
-        //
+        $client->delete();
+
+        return to_route('dashboard');
     }
 }
