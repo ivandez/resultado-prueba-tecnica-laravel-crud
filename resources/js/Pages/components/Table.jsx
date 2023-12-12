@@ -5,6 +5,15 @@ export default function Table({ clients }) {
     const deleteClient = (id) => {
         router.delete(`/client/${id}`);
     };
+
+    const askDeleteClient = (id) => {
+        const result = confirm("¿Desea eliminar a este cliente?");
+
+        if (result) {
+            deleteClient(id);
+        }
+    };
+
     return (
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -50,7 +59,7 @@ export default function Table({ clients }) {
                                 Editar
                             </Link>
                             <button
-                                onClick={() => deleteClient(client.id)}
+                                onClick={() => askDeleteClient(client.id)}
                                 type="button"
                                 className="text-white bg-red-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                             >
