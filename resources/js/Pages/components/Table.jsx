@@ -44,7 +44,7 @@ export default function Table({ clients }) {
                         <td className="px-6 py-4">{client.address}</td>
                         <td className="px-6 py-4">
                             <Link
-                                href="/"
+                                href={`/client/${client.id}/edit`}
                                 className="text-white bg-green-700  focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
                             >
                                 Editar

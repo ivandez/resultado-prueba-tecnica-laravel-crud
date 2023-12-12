@@ -65,7 +65,10 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        //
+        return Inertia::render('clients/UpdateClient', [
+            'user' => auth()->user(),
+            'client' => $client
+          ]);
     }
 
     /**
@@ -73,7 +76,20 @@ class ClientController extends Controller
      */
     public function update(Request $request, Client $client)
     {
-        //
+
+        $client->ci = $request->ci;
+
+        $client->first_name = $request->firstName;
+
+        $client->last_name = $request->lastName;
+
+        $client->cellphone_number = $request->cellphoneNumber;
+
+        $client->address = $request->address;
+ 
+        $client->save();
+
+        return to_route('dashboard');
     }
 
     /**
