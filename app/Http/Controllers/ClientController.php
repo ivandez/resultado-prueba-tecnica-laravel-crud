@@ -13,9 +13,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return Inertia::render('clients/CreateForm', [
-            'user' => auth()->user()
-          ]);
+        
     }
 
     /**
@@ -23,7 +21,9 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('clients/CreateForm', [
+            'user' => auth()->user()
+          ]);
     }
 
     /**
