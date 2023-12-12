@@ -26,7 +26,6 @@ export default function ClientForm() {
                     type="text"
                     id="firstname"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                    required
                     {...register("firstName")}
                 />
             </div>
@@ -41,7 +40,6 @@ export default function ClientForm() {
                     type="text"
                     id="lastname"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                    required
                     {...register("lastName")}
                 />
             </div>
@@ -71,7 +69,6 @@ export default function ClientForm() {
                     type="text"
                     id="cellphoneNumber"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                    required
                     {...register("cellphoneNumber")}
                 />
             </div>
@@ -86,7 +83,6 @@ export default function ClientForm() {
                     type="text"
                     id="address"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                    required
                     {...register("address")}
                 />
             </div>
